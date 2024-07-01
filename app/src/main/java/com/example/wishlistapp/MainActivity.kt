@@ -14,7 +14,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             WishlistAppTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
-                    HomeView()
+                    Navigation()
                 }
             }
         }
