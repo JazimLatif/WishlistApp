@@ -1,4 +1,4 @@
-package com.example.wishlistapp
+package com.example.wishlistapp.presentation.ui.views
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -29,7 +29,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.wishlistapp.data.Wish
+import com.example.wishlistapp.R
+import com.example.wishlistapp.domain.model.Wish
+import com.example.wishlistapp.presentation.viewmodel.WishViewModel
 import kotlinx.coroutines.launch
 
 @Composable
@@ -57,7 +59,9 @@ fun AddEditDetailView(
 
     Scaffold(
         scaffoldState = scaffoldState,
-        topBar = { AppBarView(title = if (id != 0L) stringResource(R.string.update_wish) else stringResource(R.string.add_wish), onBackNavClicked = { navController.navigateUp() } ) },
+        topBar = { AppBarView(title = if (id != 0L) stringResource(R.string.update_wish) else stringResource(
+            R.string.add_wish
+        ), onBackNavClicked = { navController.navigateUp() } ) },
     ) { it ->
         Column(
             modifier = Modifier
@@ -120,33 +124,4 @@ fun AddEditDetailView(
             }
         }
     }
-}
-
-
-@Composable
-fun WishTextField(
-    label: String,
-    value: String,
-    onValueChange: (String) -> Unit
-) {
-    OutlinedTextField(
-        value = value,
-        label = { Text(text = label, color = Color.Black) },
-        onValueChange = onValueChange,
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
-        colors = TextFieldDefaults.outlinedTextFieldColors(
-            textColor = Color.Black,
-            focusedBorderColor = colorResource(id = R.color.black),
-            unfocusedBorderColor = colorResource(id = R.color.black),
-            focusedLabelColor = colorResource(id = R.color.black),
-            unfocusedLabelColor = colorResource(id = R.color.black),
-            cursorColor = colorResource(id = R.color.black),
-        )
-    )
-}
-
-@Preview
-@Composable
-fun WishTextFieldPreview() {
-    WishTextField(label = "text1", value = "text2", onValueChange = {})
 }

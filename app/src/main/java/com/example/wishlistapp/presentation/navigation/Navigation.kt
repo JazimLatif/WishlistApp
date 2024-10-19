@@ -1,4 +1,4 @@
-package com.example.wishlistapp
+package com.example.wishlistapp.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
@@ -8,6 +8,9 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.wishlistapp.presentation.ui.views.AddEditDetailView
+import com.example.wishlistapp.presentation.ui.views.HomeView
+import com.example.wishlistapp.presentation.viewmodel.WishViewModel
 
 @Composable
 fun Navigation(
@@ -21,7 +24,8 @@ fun Navigation(
         composable(Screen.HomeScreen.route) {
             HomeView(navController, viewModel)
         }
-        composable(Screen.AddScreen.route + "/{id}",
+        composable(
+            Screen.AddScreen.route + "/{id}",
             arguments = listOf(
                 navArgument("id") {
                     type = NavType.LongType

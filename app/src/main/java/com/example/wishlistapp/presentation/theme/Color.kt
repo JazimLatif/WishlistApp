@@ -1,4 +1,4 @@
-package com.example.wishlistapp.ui.theme
+package com.example.wishlistapp.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 

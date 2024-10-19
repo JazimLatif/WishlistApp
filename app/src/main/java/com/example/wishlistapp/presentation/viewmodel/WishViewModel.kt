@@ -1,13 +1,13 @@
-package com.example.wishlistapp
+package com.example.wishlistapp.presentation.viewmodel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.wishlistapp.data.Graph
-import com.example.wishlistapp.data.Wish
-import com.example.wishlistapp.data.WishRepository
+import com.example.wishlistapp.presentation.navigation.Graph
+import com.example.wishlistapp.data.repository.WishRepository
+import com.example.wishlistapp.domain.model.Wish
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
@@ -35,7 +35,7 @@ class WishViewModel(
         }
     }
 
-    fun addWish(wish: Wish ) {
+    fun addWish(wish: Wish) {
         viewModelScope.launch(Dispatchers.IO) {
             wishRepository.addWish(wish)
         }
@@ -44,17 +44,15 @@ class WishViewModel(
     fun getWishById(id: Long) : Flow<Wish> {
         return wishRepository.getWishById(id)
     }
-    fun updateWish(wish: Wish ) {
+    fun updateWish(wish: Wish) {
         viewModelScope.launch(Dispatchers.IO) {
             wishRepository.updateWish(wish)
         }
     }
 
-    fun deleteWish(wish: Wish ) {
+    fun deleteWish(wish: Wish) {
         viewModelScope.launch(Dispatchers.IO) {
             wishRepository.deleteWish(wish)
         }
     }
-
-
 }

@@ -1,4 +1,4 @@
-package com.example.wishlistapp
+package com.example.wishlistapp.presentation.ui.views
 
 import android.widget.Toast
 import androidx.compose.animation.animateColorAsState
@@ -35,7 +35,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.wishlistapp.data.Wish
+import com.example.wishlistapp.domain.model.Wish
+import com.example.wishlistapp.presentation.navigation.Screen
+import com.example.wishlistapp.presentation.viewmodel.WishViewModel
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -105,31 +107,3 @@ fun HomeView(
     }
 }
 
-@Composable
-fun WishItem(
-    wish: Wish,
-    onClick: () -> Unit
-) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(top = 8.dp, start = 8.dp, end = 8.dp)
-            .clickable {
-                onClick()
-            },
-        elevation = 10.dp,
-        backgroundColor = Color.White
-        ) {
-        Column(
-            modifier = Modifier.padding(16.dp)
-        ) {
-            Text(
-                wish.title,
-                fontWeight = FontWeight.ExtraBold
-            )
-            Text(
-                text = wish.description
-            )
-        }
-    }
-}
