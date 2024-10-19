@@ -1,10 +1,11 @@
-package com.example.wishlistapp.data
+package com.example.wishlistapp.data.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import com.example.wishlistapp.data.model.WishEntity
 
 @Database(
-    entities = [Wish::class],
+    entities = [WishEntity::class],
     version = 1,
     exportSchema = false
 )

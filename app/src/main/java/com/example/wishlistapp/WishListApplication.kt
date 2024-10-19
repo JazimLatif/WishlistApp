@@ -1,7 +1,7 @@
 package com.example.wishlistapp
 
 import android.app.Application
-import com.example.wishlistapp.data.Graph
+import com.example.wishlistapp.presentation.navigation.Graph
 
 class WishListApplication: Application() {
 

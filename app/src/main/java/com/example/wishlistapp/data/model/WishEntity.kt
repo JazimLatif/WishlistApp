@@ -1,11 +1,12 @@
-package com.example.wishlistapp.data
+package com.example.wishlistapp.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.wishlistapp.domain.model.Wish
 
 @Entity(tableName="wish-table")
-data class Wish(
+data class WishEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0L,
     @ColumnInfo(name="wish-title")
@@ -18,7 +19,7 @@ data class Wish(
 object DummyWish {
     val wishList=listOf(
         Wish(title="Google Watch 2", description="A smart watch for fitness"),
-        Wish(title="Farenheight 451", description="A good book (apparently)"),
+        Wish(title="Fahrenheit 451", description="A good book"),
         Wish(title="CK one", description="Perfume")
     )
 }
