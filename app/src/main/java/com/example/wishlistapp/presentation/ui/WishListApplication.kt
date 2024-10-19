@@ -1,4 +1,4 @@
-package com.example.wishlistapp
+package com.example.wishlistapp.presentation.ui
 
 import android.app.Application
 import com.example.wishlistapp.presentation.navigation.Graph

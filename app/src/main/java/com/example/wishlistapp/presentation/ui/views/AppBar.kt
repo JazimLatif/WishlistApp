@@ -1,4 +1,4 @@
-package com.example.wishlistapp.presentation.views
+package com.example.wishlistapp.presentation.ui.views
 
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding

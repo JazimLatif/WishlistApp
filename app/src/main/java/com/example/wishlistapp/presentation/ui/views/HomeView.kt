@@ -1,4 +1,4 @@
-package com.example.wishlistapp.presentation.views
+package com.example.wishlistapp.presentation.ui.views
 
 import android.widget.Toast
 import androidx.compose.animation.animateColorAsState
@@ -107,31 +107,3 @@ fun HomeView(
     }
 }
 
-@Composable
-fun WishItem(
-    wish: Wish,
-    onClick: () -> Unit
-) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(top = 8.dp, start = 8.dp, end = 8.dp)
-            .clickable {
-                onClick()
-            },
-        elevation = 10.dp,
-        backgroundColor = Color.White
-        ) {
-        Column(
-            modifier = Modifier.padding(16.dp)
-        ) {
-            Text(
-                wish.title,
-                fontWeight = FontWeight.ExtraBold
-            )
-            Text(
-                text = wish.description
-            )
-        }
-    }
-}

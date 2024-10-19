@@ -1,4 +1,4 @@
-package com.example.wishlistapp.presentation.views
+package com.example.wishlistapp.presentation.ui.views
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -124,33 +124,4 @@ fun AddEditDetailView(
             }
         }
     }
-}
-
-
-@Composable
-fun WishTextField(
-    label: String,
-    value: String,
-    onValueChange: (String) -> Unit
-) {
-    OutlinedTextField(
-        value = value,
-        label = { Text(text = label, color = Color.Black) },
-        onValueChange = onValueChange,
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
-        colors = TextFieldDefaults.outlinedTextFieldColors(
-            textColor = Color.Black,
-            focusedBorderColor = colorResource(id = R.color.black),
-            unfocusedBorderColor = colorResource(id = R.color.black),
-            focusedLabelColor = colorResource(id = R.color.black),
-            unfocusedLabelColor = colorResource(id = R.color.black),
-            cursorColor = colorResource(id = R.color.black),
-        )
-    )
-}
-
-@Preview
-@Composable
-fun WishTextFieldPreview() {
-    WishTextField(label = "text1", value = "text2", onValueChange = {})
 }

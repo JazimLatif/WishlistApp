@@ -8,8 +8,8 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.example.wishlistapp.presentation.views.AddEditDetailView
-import com.example.wishlistapp.presentation.views.HomeView
+import com.example.wishlistapp.presentation.ui.views.AddEditDetailView
+import com.example.wishlistapp.presentation.ui.views.HomeView
 import com.example.wishlistapp.presentation.viewmodel.WishViewModel
 
 @Composable
